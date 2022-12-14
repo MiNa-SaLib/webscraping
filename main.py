@@ -1,10 +1,10 @@
 import requests
 import bs4
-import csv
-from itertools import zip_longest
+
 
 eposid=[]
 dayOfEposid=[]
+
 page = requests.get("https://to.akwam.cz/series/3711/%D8%A7%D9%84%D8%BA%D8%B1%D9%81%D8%A9-207")
 htmlcode=page.content
 #print(htmlcode)
@@ -19,12 +19,4 @@ for i in range(len(date)):
 for i in range(len(eposid)):
     print(f"{eposid[i]} {dayOfEposid[i]}")
 
-'''
-#if i want to print data in csv file
-allthing=[eposid ,d]
-all=zip_longest(*allthing)
-with open("D:\mina salib.csv","w") as file:
-    writer=csv.writer(file)
-    writer.writerow(["Eposid","Date of Publishing"])
-    writer.writerows(all)
-'''
+
